@@ -1,17 +1,17 @@
 // controllers/studentOtp.ts
 import { Request, Response } from "express";
-import { generateOtp, verifyOtp } from "../services/otp.service";
+import { generateOtp, verifyOtp } from "../services/otp.service.js";
 import {
   loginSchema,
   studentSignUpSchema,
   verifyUserSchema,
-} from "../validations/auth.validation";
-import { HTTPSTATUS } from "../config/http.config";
-import { asyncHandler } from "../middlewares/asyncHandler.middleware";
-import { config } from "../config/app.config";
-import { BadRequestException, NotFoundException } from "../utils/app-error";
-import { studentOrInstructorSignInWithOtp } from "../services/auth.service";
-import { prisma } from "../lib/schema";
+} from "../validations/auth.validation.js";
+import { HTTPSTATUS } from "../config/http.config.js";
+import { asyncHandler } from "../middlewares/asyncHandler.middleware.js";
+import { config } from "../config/app.config.js";
+import { BadRequestException, NotFoundException } from "../utils/app-error.js";
+import { studentOrInstructorSignInWithOtp } from "../services/auth.service.js";
+import { prisma } from "../lib/schema.js";
 
 export const loginSendOtpController = asyncHandler(
   async (req: Request, res: Response) => {

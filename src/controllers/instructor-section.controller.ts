@@ -1,10 +1,10 @@
-import { HTTPSTATUS } from "../config/http.config";
-import { asyncHandler } from "../middlewares/asyncHandler.middleware";
+import { HTTPSTATUS } from "../config/http.config.js";
+import { asyncHandler } from "../middlewares/asyncHandler.middleware.js";
 import {
   instructorCreateSectionService,
   instructorDeleteSectionService,
   instructorUpdateSectionService,
-} from "../services/instructor-section.service";
+} from "../services/instructor-section.service.js";
 
 export const instructorCreateSectionController = asyncHandler(
   async (req, res, next) => {

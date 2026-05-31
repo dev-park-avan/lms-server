@@ -1,25 +1,24 @@
 import { Router } from "express";
-import { requirePermission } from "../middlewares/requirePermission.middleware";
-import { PermissionType } from "../generated/prisma/enums";
+import { requirePermission } from "../middlewares/requirePermission.middleware.js";
+import { PermissionType } from "../generated/prisma/enums.js";
 import {
   createCourseController,
   deleteCloudinaryImageController,
   deleteCourseByIdController,
   getCourseByIdController,
   updateCourseController,
-} from "../controllers/instructor-course.controller";
+} from "../controllers/instructor-course.controller.js";
 import {
   instructorCreateSectionController,
   instructorDeleteSectionController,
   instructorUpdateSectionController,
-} from "../controllers/instructor-section.controller";
+} from "../controllers/instructor-section.controller.js";
 import {
   deleteVideoFromCloudinaryController,
   instructorCreateLectureController,
   instructorDeleteLectureController,
   instructorUpdateLectureController,
-} from "../controllers/instructor-lecture.controller";
-import { isAuthenticated } from "../middlewares/isAuthenticated.middleware";
+} from "../controllers/instructor-lecture.controller.js";
 
 const instructorCourseRoutes = Router();
 

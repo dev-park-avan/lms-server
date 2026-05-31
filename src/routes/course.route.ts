@@ -1,15 +1,15 @@
 import { Router } from "express";
-import { isAuthenticated } from "../middlewares/isAuthenticated.middleware";
-import { requirePermission } from "../middlewares/requirePermission.middleware";
-import { validateSchema } from "../utils/validateSchema";
-import { CourseSchema } from "../validations/course.validation";
-import { PermissionType } from "../generated/prisma/enums";
+import { isAuthenticated } from "../middlewares/isAuthenticated.middleware.js";
+import { requirePermission } from "../middlewares/requirePermission.middleware.js";
+import { validateSchema } from "../utils/validateSchema.js";
+import { CourseSchema } from "../validations/course.validation.js";
+import { PermissionType } from "../generated/prisma/enums.js";
 import {
   getAllCoursesController,
   getCourseController,
   getInstructorOnlyCoursesController,
   saveCourseController,
-} from "../controllers/course.controller";
+} from "../controllers/course.controller.js";
 
 const courseRoutes = Router();
 

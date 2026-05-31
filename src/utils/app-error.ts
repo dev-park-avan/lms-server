@@ -1,5 +1,5 @@
-import { HTTPSTATUS, HttpStatusCodeType } from "../config/http.config";
-import { ErrorCodeEnum, ErrorCodeEnumType } from "../enums/error-code.enum";
+import { HTTPSTATUS, HttpStatusCodeType } from "../config/http.config.js";
+import { ErrorCodeEnum, ErrorCodeEnumType } from "../enums/error-code.enum.js";
 
 export class AppError extends Error {
   public statusCode: HttpStatusCodeType;
@@ -8,7 +8,7 @@ export class AppError extends Error {
   constructor(
     message: string,
     statusCode = HTTPSTATUS.INTERNAL_SERVER_ERROR,
-    errorCode?: ErrorCodeEnumType
+    errorCode?: ErrorCodeEnumType,
   ) {
     super(message);
     this.statusCode = statusCode;
@@ -21,7 +21,7 @@ export class HttpException extends AppError {
   constructor(
     message = "Http Exception Error",
     statusCode: HttpStatusCodeType,
-    errorCode?: ErrorCodeEnumType
+    errorCode?: ErrorCodeEnumType,
   ) {
     super(message, statusCode, errorCode);
   }
@@ -30,12 +30,12 @@ export class HttpException extends AppError {
 export class InternalServerException extends AppError {
   constructor(
     message = "Internal Server Error",
-    errorCode?: ErrorCodeEnumType
+    errorCode?: ErrorCodeEnumType,
   ) {
     super(
       message,
       HTTPSTATUS.INTERNAL_SERVER_ERROR,
-      errorCode || ErrorCodeEnum.INTERNAL_SERVER_ERROR
+      errorCode || ErrorCodeEnum.INTERNAL_SERVER_ERROR,
     );
   }
 }
@@ -45,7 +45,7 @@ export class NotFoundException extends AppError {
     super(
       message,
       HTTPSTATUS.NOT_FOUND,
-      errorCode || ErrorCodeEnum.RESOURCE_NOT_FOUND
+      errorCode || ErrorCodeEnum.RESOURCE_NOT_FOUND,
     );
   }
 }
@@ -55,7 +55,7 @@ export class BadRequestException extends AppError {
     super(
       message,
       HTTPSTATUS.BAD_REQUEST,
-      errorCode || ErrorCodeEnum.VALIDATION_ERROR
+      errorCode || ErrorCodeEnum.VALIDATION_ERROR,
     );
   }
 }
@@ -65,7 +65,7 @@ export class UnauthorizedException extends AppError {
     super(
       message,
       HTTPSTATUS.UNAUTHORIZED,
-      errorCode || ErrorCodeEnum.ACCESS_UNAUTHORIZED
+      errorCode || ErrorCodeEnum.ACCESS_UNAUTHORIZED,
     );
   }
 }

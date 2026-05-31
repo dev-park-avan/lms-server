@@ -1,14 +1,14 @@
-import cloudinary from "../config/cloudinary.config";
-import { HTTPSTATUS } from "../config/http.config";
-import { asyncHandler } from "../middlewares/asyncHandler.middleware";
+import cloudinary from "../config/cloudinary.config.js";
+import { HTTPSTATUS } from "../config/http.config.js";
+import { asyncHandler } from "../middlewares/asyncHandler.middleware.js";
 import {
   createCourseService,
   deleteCourseByIdService,
   getCourseByIdService,
   updateCourseService,
-} from "../services/instructor-course.service";
-import { NotFoundException } from "../utils/app-error";
-import { UpdateCourseType } from "../validations/course.validation";
+} from "../services/instructor-course.service.js";
+import { NotFoundException } from "../utils/app-error.js";
+import { UpdateCourseType } from "../validations/course.validation.js";
 
 // INSTRUCTOR CONTROLLERS
 export const createCourseController = asyncHandler(async (req, res) => {

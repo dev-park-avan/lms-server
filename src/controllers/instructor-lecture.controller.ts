@@ -1,11 +1,11 @@
-import cloudinary from "../config/cloudinary.config";
-import { HTTPSTATUS } from "../config/http.config";
-import { asyncHandler } from "../middlewares/asyncHandler.middleware";
+import cloudinary from "../config/cloudinary.config.js";
+import { HTTPSTATUS } from "../config/http.config.js";
+import { asyncHandler } from "../middlewares/asyncHandler.middleware.js";
 import {
   instructorCreateLectureService,
   instructorDeleteLectureService,
   instructorUpdateLectureService,
-} from "../services/instructor-lecture.service";
+} from "../services/instructor-lecture.service.js";
 
 export const instructorCreateLectureController = asyncHandler(
   async (req, res, next) => {

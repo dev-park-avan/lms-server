@@ -1,7 +1,12 @@
 // import { PrismaClient, ProviderType, RoleType, User } from "@prisma/client";
-import { signJwt } from "../utils/jwt";
-import { prisma } from "../lib/schema";
-import { ProviderType, RoleType } from "../generated/prisma/enums";
+// import { signJwt } from "../utils/jwt";
+// import { prisma } from "../lib/schema";
+// import { ProviderType, RoleType } from "../generated/prisma/enums";
+
+import { Prisma } from "../generated/prisma/client.js";
+import { ProviderType, RoleType } from "../generated/prisma/enums.js";
+import { prisma } from "../lib/schema.js";
+import { signJwt } from "../utils/jwt.js";
 
 // const prisma = new PrismaClient();
 
@@ -29,7 +34,7 @@ export const signInOrCreateUser = async (data: AuthInput) => {
   const normalizedProvider =
     provider === "EMAIL" ? ProviderType.EMAIL : provider;
 
-  return await prisma.$transaction(async (tx) => {
+  return await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     // 1️⃣ Check if user already exists
     let user = await tx.user.findUnique({
       where: { email },

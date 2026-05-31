@@ -1,20 +1,21 @@
 // import { prisma } from "../config/prisma.config";
-import { HTTPSTATUS } from "../config/http.config";
-import { StudentProfileSetupValidationType } from "../validations/profile-setup.validation";
+import { HTTPSTATUS } from "../config/http.config.js";
+import { StudentProfileSetupValidationType } from "../validations/profile-setup.validation.js";
 // import {
 //   DegreeProgram,
 //   ReferralSource,
 //   StudentProfile,
 //   StudyYear,
 // } from "@prisma/client";
-import { AppError } from "../utils/app-error";
-import { prisma } from "../lib/schema";
+import { AppError } from "../utils/app-error.js";
+import { prisma } from "../lib/schema.js";
 import {
   DegreeProgram,
+  Prisma,
   ReferralSource,
   StudentProfile,
   StudyYear,
-} from "../generated/prisma/client";
+} from "../generated/prisma/client.js";
 
 const studentProfileSetupService = async (
   profileData: StudentProfileSetupValidationType,
@@ -24,7 +25,7 @@ const studentProfileSetupService = async (
     throw new AppError("Unauthorized", HTTPSTATUS.UNAUTHORIZED);
   }
 
-  return await prisma.$transaction(async (tx) => {
+  return await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     const existingProfile = await tx.studentProfile.findUnique({
       where: { userId },
     });

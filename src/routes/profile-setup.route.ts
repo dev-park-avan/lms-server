@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { studentProfileSetupController } from "../controllers/profile-setup.controller";
+import { studentProfileSetupController } from "../controllers/profile-setup.controller.js";
 
 const profileSetupRoutes = Router();
 

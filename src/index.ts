@@ -3,23 +3,23 @@ dotenv.config();
 
 import express from "express";
 import cors from "cors";
-import authRoutes from "./routes/auth.route";
+import authRoutes from "./routes/auth.route.js";
 import passport from "passport";
 import cookieParser from "cookie-parser";
-import { errorHandler } from "./middlewares/errorHandler.middleware";
-import "./config/passport.config";
-import courseRoutes from "./routes/course.route";
-import { isAuthenticated } from "./middlewares/isAuthenticated.middleware";
-import userRoutes from "./routes/user.routes";
-import paymentRoutes from "./routes/payment.route";
-import enrollmentRoutes from "./routes/enrollment.route";
-import contactUsRoute from "./routes/contact-us.route";
-import profileSetupRoutes from "./routes/profile-setup.route";
-import cloudinaryRoutes from "./routes/cloudinary-uploads.route";
-import sectionRoutes from "./routes/section.route";
+import { errorHandler } from "./middlewares/errorHandler.middleware.js";
+import "./config/passport.config.js";
+import courseRoutes from "./routes/course.route.js";
+import { isAuthenticated } from "./middlewares/isAuthenticated.middleware.js";
+import userRoutes from "./routes/user.routes.js";
+import paymentRoutes from "./routes/payment.route.js";
+import enrollmentRoutes from "./routes/enrollment.route.js";
+import contactUsRoute from "./routes/contact-us.route.js";
+import profileSetupRoutes from "./routes/profile-setup.route.js";
+import cloudinaryRoutes from "./routes/cloudinary-uploads.route.js";
+// import sectionRoutes from "./routes/section.route";
 // import lectureRoutes from "./routes/lecture.route";
-import { config } from "./config/app.config";
-import instructorCourseRoutes from "./routes/instructor-course.route";
+import { config } from "./config/app.config.js";
+import instructorCourseRoutes from "./routes/instructor-course.route.js";
 // import lectureRoutes from "./routes/lecture.route";
 
 console.log("🔥 NEW CODE RUNNING 🔥");
@@ -91,7 +91,7 @@ app.use(
 //   instructorSectionRoutes,
 // );
 
-app.use(`${config.BASE_PATH}/section`, sectionRoutes);
+// app.use(`${config.BASE_PATH}/section`, sectionRoutes);
 
 // app.use(`${config.BASE_PATH}/lectures`, lectureRoutes);
 

@@ -1,10 +1,14 @@
 // import { ProviderType, RoleType } from "@prisma/client";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import { signJwt } from "../utils/jwt";
-import { BadRequestException } from "../utils/app-error";
-import { prisma } from "../lib/schema";
-import { ProviderType, RoleType } from "../generated/prisma/enums";
+import bcryptjs from "bcryptjs";
+import { prisma } from "../lib/schema.js";
+import { BadRequestException } from "../utils/app-error.js";
+import { ProviderType, RoleType } from "../generated/prisma/enums.js";
+import { signJwt } from "../utils/jwt.js";
+import { Prisma } from "../generated/prisma/client.js";
+// import { signJwt } from "../utils/jwt";
+// import { BadRequestException } from "../utils/app-error";
+// import { prisma } from "../lib/schema";
+// import { ProviderType, RoleType } from "../generated/prisma/enums";
 
 export const createInstructorUserService = async (data: {
   name: string;
@@ -13,7 +17,7 @@ export const createInstructorUserService = async (data: {
 }) => {
   const { email, name, password } = data;
 
-  return await prisma.$transaction(async (tx) => {
+  return await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     // 1️⃣ Check if user already exists
     const existingUser = await tx.user.findUnique({ where: { email } });
     if (existingUser) {
@@ -23,7 +27,7 @@ export const createInstructorUserService = async (data: {
     }
 
     // 2️⃣ Hash password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcryptjs.hash(password, 10);
 
     // 3️⃣ Create admin user
     const newUser = await tx.user.create({
@@ -74,7 +78,7 @@ export const loginInstructorUserService = async (data: {
 }) => {
   const { email, password } = data;
 
-  return await prisma.$transaction(async (tx) => {
+  return await prisma.$transaction(async (tx: any) => {
     // 1️⃣ Find user
     const user = await tx.user.findUnique({ where: { email } });
     if (!user || user.role !== RoleType.INSTRUCTOR) {
@@ -83,7 +87,7 @@ export const loginInstructorUserService = async (data: {
 
     // 2️⃣ Verify password
     if (!user.password) throw new Error("Password not set for this admin");
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await bcryptjs.compare(password, user.password);
     if (!isMatch) throw new Error("Invalid credentials");
 
     // 3️⃣ Ensure account entry exists

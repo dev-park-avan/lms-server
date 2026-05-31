@@ -1,18 +1,34 @@
+// {
+//   "compilerOptions": {
+//     "target": "ES2020",
+//     "module": "NodeNext",
+//     "rootDir": "src",
+//     "outDir": "dist",
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "skipLibCheck": true,
+//     "moduleResolution": "nodenext",
+//     "resolveJsonModule": true,
+//     "types": ["node", "express"],
+//     "paths": {
+//       "@prisma/client": ["./src/generated/prisma"]
+//     }
+//   },
+//   "include": ["src/**/*.ts", "src/types/**/*.d.ts"]
+// }
+
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "NodeNext",
+    "module": "node16",
+    "moduleResolution": "node16",
     "rootDir": "src",
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
-    "types": ["node", "express"],
-    "paths": {
-      "@prisma/client": ["./src/generated/prisma"]
-    }
+    "types": ["node", "express"]
   },
   "include": ["src/**/*.ts", "src/types/**/*.d.ts"]
 }

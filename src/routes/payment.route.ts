@@ -3,7 +3,7 @@ import {
   createRazorpayOrderController,
   razorpayWebhookController,
   verifyRazorpayPaymentController,
-} from "../controllers/payment.controller";
+} from "../controllers/payment.controller.js";
 
 const paymentRoutes = Router();
 
@@ -12,7 +12,7 @@ paymentRoutes.post("/verify", verifyRazorpayPaymentController);
 paymentRoutes.post(
   "/webhook",
   express.raw({ type: "application/json" }),
-  razorpayWebhookController
+  razorpayWebhookController,
 );
 // paymentRoutes.post("/refund", handleRefundController);
 

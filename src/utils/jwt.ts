@@ -1,5 +1,5 @@
 import jwt, { JwtPayload } from "jsonwebtoken";
-import { config } from "../config/app.config";
+import { config } from "../config/app.config.js";
 
 export interface CustomJwtPayload {
   id: string;

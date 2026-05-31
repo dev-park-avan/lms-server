@@ -1,6 +1,6 @@
 // src/modules/lecture/lecture.service.ts
 
-import { prisma } from "../lib/schema";
+import { prisma } from "../lib/schema.js";
 
 // import { prisma } from "../config/prisma.config";
 

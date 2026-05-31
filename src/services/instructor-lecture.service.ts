@@ -1,5 +1,5 @@
-import { LectureType } from "../generated/prisma/enums";
-import { prisma } from "../lib/schema";
+import { LectureType } from "../generated/prisma/enums.js";
+import { prisma } from "../lib/schema.js";
 
 export const instructorCreateLectureService = async ({
   sectionId,

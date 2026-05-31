@@ -1,7 +1,7 @@
 // import { prisma } from "../config/prisma.config";
-import { razorpayConfig } from "../config/razorpay.config";
+import { razorpayConfig } from "../config/razorpay.config.js";
 import crypto from "crypto";
-import { prisma } from "../lib/schema";
+import { prisma } from "../lib/schema.js";
 
 // Create a payment for an order
 export const createPaymentService = async (

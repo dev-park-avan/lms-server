@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { SectionSchema } from "./section.validation";
+import { SectionSchema } from "./section.validation.js";
 
 export const CourseLevelEnum = z.enum(["BEGINNER", "INTERMEDIATE", "ADVANCED"]);
 

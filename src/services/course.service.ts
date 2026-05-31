@@ -1,14 +1,9 @@
-// import { prisma } from "../config/prisma.config";
+import { prisma } from "../lib/schema.js";
+import { NotFoundException } from "../utils/app-error.js";
+import { FullCourseData } from "../validations/course.validation.js";
+import { CourseLevel } from "../generated/prisma/enums.js";
 import slugify from "slugify";
-import { asyncHandler } from "../middlewares/asyncHandler.middleware";
-import {
-  FullCourseData,
-  UpdateCourseType,
-} from "../validations/course.validation";
-import { NotFoundException, UnauthorizedException } from "../utils/app-error";
-import { prisma } from "../lib/schema";
-import { CourseLevel, LectureType } from "../generated/prisma/enums";
-import { date } from "zod";
+import { Prisma } from "../generated/prisma/client.js";
 
 export const getAllCoursesService = async () => {
   return prisma.course.findMany({
@@ -33,7 +28,7 @@ export const saveCompleteCourseService = async (
   data: FullCourseData,
   instructorId: string,
 ) => {
-  return prisma.$transaction(async (tx) => {
+  return prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     // const { courseData } = data;
     const courseData = data.courseData;
     const courseInput = courseData.course;
@@ -164,10 +159,10 @@ export const validateBeforePublish = async (courseId: string) => {
 
   if (course.sections.length === 0) throw new Error("Add at least one section");
 
-  const lectures = course.sections.flatMap((s) => s.lectures);
+  const lectures = course.sections.flatMap((s: any) => s.lectures);
   if (lectures.length === 0) throw new Error("Add lectures");
 
-  const hasVideo = lectures.some((l) => l.type === "VIDEO");
+  const hasVideo = lectures.some((l: any) => l.type === "VIDEO");
   if (!hasVideo) throw new Error("At least one video required");
 };
 

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { HTTPSTATUS } from "../config/http.config";
-import { verifyJwt } from "../utils/jwt";
+import { HTTPSTATUS } from "../config/http.config.js";
+import { verifyJwt } from "../utils/jwt.js";
 
 export const isAuthenticated = (
   req: Request,

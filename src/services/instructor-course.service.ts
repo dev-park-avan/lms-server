@@ -1,8 +1,11 @@
 import slugify from "slugify";
-import { prisma } from "../lib/schema";
-import { NotFoundException, UnauthorizedException } from "../utils/app-error";
-import { UpdateCourseType } from "../validations/course.validation";
-import cloudinary from "../config/cloudinary.config";
+import { prisma } from "../lib/schema.js";
+import { UpdateCourseType } from "../validations/course.validation.js";
+import {
+  NotFoundException,
+  UnauthorizedException,
+} from "../utils/app-error.js";
+import cloudinary from "../config/cloudinary.config.js";
 
 export const createCourseService = async (title: string, userId: string) => {
   const instructorProfile = await prisma.instructorProfile.findUnique({

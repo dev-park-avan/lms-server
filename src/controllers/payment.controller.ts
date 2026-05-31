@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 
-import { asyncHandler } from "../middlewares/asyncHandler.middleware";
-import { HTTPSTATUS } from "../config/http.config";
+import { asyncHandler } from "../middlewares/asyncHandler.middleware.js";
+import { HTTPSTATUS } from "../config/http.config.js";
 
 import {
   createPaymentService,
   handleRazorpayWebhookService,
   verifyRazorpayPaymentService,
-} from "../services/payment.service";
+} from "../services/payment.service.js";
 
 // 1️⃣ Create Order
 export const createRazorpayOrderController = asyncHandler(
@@ -18,7 +18,7 @@ export const createRazorpayOrderController = asyncHandler(
     const data = await createPaymentService(userId!, courseId, gateway);
 
     res.status(HTTPSTATUS.CREATED).json(data);
-  }
+  },
 );
 
 // 2️⃣ Verify Payment
@@ -30,7 +30,7 @@ export const verifyRazorpayPaymentController = asyncHandler(
       message: "Payment verified and enrollment completed",
       data,
     });
-  }
+  },
 );
 
 export const razorpayWebhookController = asyncHandler(
@@ -40,7 +40,7 @@ export const razorpayWebhookController = asyncHandler(
 
     await handleRazorpayWebhookService(rawBody, signature);
     res.status(200).send("Webhook handled");
-  }
+  },
 );
 
 // 3️⃣ Handle Razorpay Webhooks

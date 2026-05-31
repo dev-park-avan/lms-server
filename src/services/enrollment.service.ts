@@ -1,6 +1,6 @@
 // import { prisma } from "../config/prisma.config";
 
-import { prisma } from "../lib/schema";
+import { prisma } from "../lib/schema.js";
 
 export const getEnrollmentStatusService = async (
   userId: string,

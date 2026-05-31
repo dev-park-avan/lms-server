@@ -1,4 +1,4 @@
-import { UnauthorizedException } from "./app-error";
+import { UnauthorizedException } from "./app-error.js";
 
 // Custom function to validate user ID
 export const checkUserId = (userId: string | undefined): boolean => {

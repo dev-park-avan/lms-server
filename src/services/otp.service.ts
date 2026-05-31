@@ -1,7 +1,11 @@
 // services/otpService.ts
-import { sendOtpEmail } from "../utils/mailer";
-import { compareValue, hashValue } from "../utils/bcrypt";
-import { prisma } from "../lib/schema";
+// import { sendOtpEmail } from "../utils/mailer";
+// import { compareValue, hashValue } from "../utils/bcrypt";
+// import { prisma } from "../lib/schema";
+
+import { prisma } from "../lib/schema.js";
+import { compareValue, hashValue } from "../utils/bcrypt.js";
+import { sendOtpEmail } from "../utils/mailer.js";
 
 // Generate and send OTP
 export const generateOtp = async (email: string) => {

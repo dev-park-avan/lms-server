@@ -1,16 +1,15 @@
 // src/modules/course/course.controller.ts
 import { Request, Response } from "express";
 // import * as service from "../services/course.service";
-import { asyncHandler } from "../middlewares/asyncHandler.middleware";
-import { HTTPSTATUS } from "../config/http.config";
-import { FullCourseData } from "../validations/course.validation";
+import { asyncHandler } from "../middlewares/asyncHandler.middleware.js";
+import { HTTPSTATUS } from "../config/http.config.js";
+import { FullCourseData } from "../validations/course.validation.js";
 import {
   getAllCoursesService,
   getCourseService,
   getInstructorOnlyCoursesService,
   saveCompleteCourseService,
-} from "../services/course.service";
-import { NotFoundException } from "../utils/app-error";
+} from "../services/course.service.js";
 
 // 📚 Get All Courses
 export const getAllCoursesController = asyncHandler(async (req, res) => {

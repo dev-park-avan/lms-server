@@ -2,9 +2,9 @@ import { Request, Response } from "express";
 import {
   createInstructorUserService,
   loginInstructorUserService,
-} from "../services/instructor-auth.service";
-import { HTTPSTATUS } from "../config/http.config";
-import { asyncHandler } from "../middlewares/asyncHandler.middleware";
+} from "../services/instructor-auth.service.js";
+import { HTTPSTATUS } from "../config/http.config.js";
+import { asyncHandler } from "../middlewares/asyncHandler.middleware.js";
 
 export const signupInstructorController = asyncHandler(
   async (req: Request, res: Response) => {

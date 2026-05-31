@@ -4,12 +4,12 @@ import {
   loginSendOtpController,
   signupSendOtpController,
   verifyOtpController,
-} from "../controllers/auth.controller";
+} from "../controllers/auth.controller.js";
 import passport from "passport";
 import {
   loginInstructorController,
   signupInstructorController,
-} from "../controllers/instructor-auth.controller";
+} from "../controllers/instructor-auth.controller.js";
 
 const authRoutes = Router();
 

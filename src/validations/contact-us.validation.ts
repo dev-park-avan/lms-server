@@ -1,5 +1,5 @@
 import z from "zod";
-import { eamilSchema } from "./auth.validation";
+import { eamilSchema } from "./auth.validation.js";
 
 export const contactUsSchema = z.object({
   firstName: z
@@ -16,3 +16,5 @@ export const contactUsSchema = z.object({
     .min(10, "Message must be at least 10 characters long")
     .max(1000, "Message is too long"),
 });
+
+export type contactUsSchemaType = z.infer<typeof contactUsSchema>;

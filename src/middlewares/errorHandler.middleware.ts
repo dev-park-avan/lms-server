@@ -1,8 +1,8 @@
 import { ErrorRequestHandler, Response } from "express";
-import { HTTPSTATUS } from "../config/http.config";
+import { HTTPSTATUS } from "../config/http.config.js";
 import { z, ZodError } from "zod";
-import { ErrorCodeEnum } from "../enums/error-code.enum";
-import { AppError } from "../utils/app-error";
+import { ErrorCodeEnum } from "../enums/error-code.enum.js";
+import { AppError } from "../utils/app-error.js";
 
 const formatZodError = (res: Response, error: z.ZodError) => {
   const errors = error?.issues?.map((err) => ({
@@ -21,7 +21,7 @@ export const errorHandler: ErrorRequestHandler = (
   error,
   req,
   res,
-  next
+  next,
 ): any => {
   console.log(`Error Occured on PATH: ${req.path}`, error);
 

@@ -1,5 +1,5 @@
-import { Section } from "../generated/prisma/browser";
-import { prisma } from "../lib/schema";
+import { Section } from "../generated/prisma/browser.js";
+import { prisma } from "../lib/schema.js";
 
 export const instructorCreateSectionService = async (courseId: string) => {
   const lastSection = await prisma.section.findFirst({

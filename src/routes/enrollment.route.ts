@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { getEnrollmentStatusController } from "../controllers/enrollment.controller";
+import { getEnrollmentStatusController } from "../controllers/enrollment.controller.js";
 
 const enrollmentRoutes = Router();
 
 enrollmentRoutes.get(
   "/:courseId/enrollment-status",
-  getEnrollmentStatusController
+  getEnrollmentStatusController,
 );
 
 export default enrollmentRoutes;

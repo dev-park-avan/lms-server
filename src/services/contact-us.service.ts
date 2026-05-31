@@ -1,13 +1,8 @@
-// import { prisma } from "../config/prisma.config";
-import { prisma } from "../lib/schema";
-import { sendAutoReply, sendEmailToAdmin } from "../utils/mailer";
+import { prisma } from "../lib/schema.js";
+import { sendAutoReply, sendEmailToAdmin } from "../utils/mailer.js";
+import { contactUsSchemaType } from "../validations/contact-us.validation.js";
 
-export const contactUsService = async (body: {
-  firstName: string;
-  lastName: string;
-  email: string;
-  message: string;
-}) => {
+export const contactUsService = async (body: contactUsSchemaType) => {
   const { firstName, lastName, email, message } = body;
   console.log("dooooooo", firstName, lastName, email, message);
 

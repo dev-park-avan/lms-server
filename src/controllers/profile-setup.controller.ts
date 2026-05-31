@@ -1,7 +1,7 @@
-import { HTTPSTATUS } from "../config/http.config";
-import { asyncHandler } from "../middlewares/asyncHandler.middleware";
-import { studentProfileSetupService } from "../services/profile-setup.service";
-import { StudentProfileSetupValidation } from "../validations/profile-setup.validation";
+import { HTTPSTATUS } from "../config/http.config.js";
+import { asyncHandler } from "../middlewares/asyncHandler.middleware.js";
+import { studentProfileSetupService } from "../services/profile-setup.service.js";
+import { StudentProfileSetupValidation } from "../validations/profile-setup.validation.js";
 
 const studentProfileSetupController = asyncHandler(async (req, res, next) => {
   const userId = req.user?.id;

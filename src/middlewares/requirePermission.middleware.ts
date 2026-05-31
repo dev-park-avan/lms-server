@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { PermissionType } from "../generated/prisma/enums";
-import { prisma } from "../lib/schema";
+import { PermissionType } from "../generated/prisma/enums.js";
+import { prisma } from "../lib/schema.js";
 // import { PrismaClient, PermissionType } from "@prisma/client";
 
 // const prisma = new PrismaClient();

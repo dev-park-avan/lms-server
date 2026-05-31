@@ -1,6 +1,6 @@
 import Razorpay from "razorpay";
 import crypto from "crypto";
-import { prisma } from "../lib/schema";
+import { prisma } from "../lib/schema.js";
 // import { prisma } from "../config/prisma.config";
 
 const razorpay = new Razorpay({

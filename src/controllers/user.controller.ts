@@ -1,7 +1,7 @@
 // import { prisma } from "../config/prisma.config";
-import { prisma } from "../lib/schema";
-import { asyncHandler } from "../middlewares/asyncHandler.middleware";
-import { NotFoundException } from "../utils/app-error";
+import { prisma } from "../lib/schema.js";
+import { asyncHandler } from "../middlewares/asyncHandler.middleware.js";
+import { NotFoundException } from "../utils/app-error.js";
 
 export const getCurrentUserController = asyncHandler(async (req, res, next) => {
   if (!req.user) throw new NotFoundException("User not found");

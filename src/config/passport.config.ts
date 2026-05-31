@@ -3,9 +3,9 @@ import passport from "passport";
 import { Strategy as JwtStrategy, ExtractJwt } from "passport-jwt";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 // import { PrismaClient, ProviderType, RoleType } from "@prisma/client";
-import { config } from "./app.config";
-import { handleGoogleAuth } from "../services/auth.service";
-import { prisma } from "../lib/schema";
+import { config } from "./app.config.js";
+import { handleGoogleAuth } from "../services/auth.service.js";
+import { prisma } from "../lib/schema.js";
 
 // const prisma = new PrismaClient();
 const JWT_SECRET = config.JWT_SECRET || "your-secret";
