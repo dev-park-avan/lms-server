@@ -49,6 +49,7 @@ passport.use(
         );
         return done(null, result);
       } catch (error) {
+        console.log("Google SSO", error);
         return done(error, undefined);
       }
     },

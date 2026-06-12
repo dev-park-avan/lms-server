@@ -191,18 +191,9 @@ export type InstructorProfileScalarFieldEnum = (typeof InstructorProfileScalarFi
 export const CourseScalarFieldEnum = {
   id: 'id',
   title: 'title',
-  subtitle: 'subtitle',
   slug: 'slug',
   description: 'description',
-  learningObjectives: 'learningObjectives',
-  prerequisites: 'prerequisites',
-  targetAudience: 'targetAudience',
-  welcomeMessage: 'welcomeMessage',
-  congratsMessage: 'congratsMessage',
   thumbnail: 'thumbnail',
-  thumbnailPublicId: 'thumbnailPublicId',
-  promoVideo: 'promoVideo',
-  promoVideoPublicId: 'promoVideoPublicId',
   price: 'price',
   level: 'level',
   categoryId: 'categoryId',
@@ -218,7 +209,16 @@ export const CourseScalarFieldEnum = {
   metaImage: 'metaImage',
   metaSchema: 'metaSchema',
   originalPrice: 'originalPrice',
-  status: 'status'
+  status: 'status',
+  promoVideo: 'promoVideo',
+  subtitle: 'subtitle',
+  congratsMessage: 'congratsMessage',
+  welcomeMessage: 'welcomeMessage',
+  learningObjectives: 'learningObjectives',
+  prerequisites: 'prerequisites',
+  targetAudience: 'targetAudience',
+  thumbnailPublicId: 'thumbnailPublicId',
+  promoVideoPublicId: 'promoVideoPublicId'
 } as const
 
 export type CourseScalarFieldEnum = (typeof CourseScalarFieldEnum)[keyof typeof CourseScalarFieldEnum]
@@ -227,9 +227,9 @@ export type CourseScalarFieldEnum = (typeof CourseScalarFieldEnum)[keyof typeof 
 export const SectionScalarFieldEnum = {
   id: 'id',
   title: 'title',
-  objective: 'objective',
   order: 'order',
-  courseId: 'courseId'
+  courseId: 'courseId',
+  objective: 'objective'
 } as const
 
 export type SectionScalarFieldEnum = (typeof SectionScalarFieldEnum)[keyof typeof SectionScalarFieldEnum]
@@ -250,17 +250,17 @@ export const VideoScalarFieldEnum = {
   id: 'id',
   title: 'title',
   originalUrl: 'originalUrl',
-  originalUrlPubicId: 'originalUrlPubicId',
   streamUrl: 'streamUrl',
   thumbnailUrl: 'thumbnailUrl',
-  thumbnailUrlPublicId: 'thumbnailUrlPublicId',
   duration: 'duration',
   size: 'size',
   format: 'format',
   status: 'status',
   lectureId: 'lectureId',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  originalUrlPubicId: 'originalUrlPubicId',
+  thumbnailUrlPublicId: 'thumbnailUrlPublicId'
 } as const
 
 export type VideoScalarFieldEnum = (typeof VideoScalarFieldEnum)[keyof typeof VideoScalarFieldEnum]

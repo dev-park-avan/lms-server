@@ -43,15 +43,9 @@ export type CourseSumAggregateOutputType = {
 export type CourseMinAggregateOutputType = {
   id: string | null
   title: string | null
-  subtitle: string | null
   slug: string | null
   description: string | null
-  welcomeMessage: string | null
-  congratsMessage: string | null
   thumbnail: string | null
-  thumbnailPublicId: string | null
-  promoVideo: string | null
-  promoVideoPublicId: string | null
   price: number | null
   level: $Enums.CourseLevel | null
   categoryId: string | null
@@ -67,20 +61,20 @@ export type CourseMinAggregateOutputType = {
   metaImage: string | null
   originalPrice: number | null
   status: string | null
+  promoVideo: string | null
+  subtitle: string | null
+  congratsMessage: string | null
+  welcomeMessage: string | null
+  thumbnailPublicId: string | null
+  promoVideoPublicId: string | null
 }
 
 export type CourseMaxAggregateOutputType = {
   id: string | null
   title: string | null
-  subtitle: string | null
   slug: string | null
   description: string | null
-  welcomeMessage: string | null
-  congratsMessage: string | null
   thumbnail: string | null
-  thumbnailPublicId: string | null
-  promoVideo: string | null
-  promoVideoPublicId: string | null
   price: number | null
   level: $Enums.CourseLevel | null
   categoryId: string | null
@@ -96,23 +90,20 @@ export type CourseMaxAggregateOutputType = {
   metaImage: string | null
   originalPrice: number | null
   status: string | null
+  promoVideo: string | null
+  subtitle: string | null
+  congratsMessage: string | null
+  welcomeMessage: string | null
+  thumbnailPublicId: string | null
+  promoVideoPublicId: string | null
 }
 
 export type CourseCountAggregateOutputType = {
   id: number
   title: number
-  subtitle: number
   slug: number
   description: number
-  learningObjectives: number
-  prerequisites: number
-  targetAudience: number
-  welcomeMessage: number
-  congratsMessage: number
   thumbnail: number
-  thumbnailPublicId: number
-  promoVideo: number
-  promoVideoPublicId: number
   price: number
   level: number
   categoryId: number
@@ -129,6 +120,15 @@ export type CourseCountAggregateOutputType = {
   metaSchema: number
   originalPrice: number
   status: number
+  promoVideo: number
+  subtitle: number
+  congratsMessage: number
+  welcomeMessage: number
+  learningObjectives: number
+  prerequisites: number
+  targetAudience: number
+  thumbnailPublicId: number
+  promoVideoPublicId: number
   _all: number
 }
 
@@ -150,15 +150,9 @@ export type CourseSumAggregateInputType = {
 export type CourseMinAggregateInputType = {
   id?: true
   title?: true
-  subtitle?: true
   slug?: true
   description?: true
-  welcomeMessage?: true
-  congratsMessage?: true
   thumbnail?: true
-  thumbnailPublicId?: true
-  promoVideo?: true
-  promoVideoPublicId?: true
   price?: true
   level?: true
   categoryId?: true
@@ -174,20 +168,20 @@ export type CourseMinAggregateInputType = {
   metaImage?: true
   originalPrice?: true
   status?: true
+  promoVideo?: true
+  subtitle?: true
+  congratsMessage?: true
+  welcomeMessage?: true
+  thumbnailPublicId?: true
+  promoVideoPublicId?: true
 }
 
 export type CourseMaxAggregateInputType = {
   id?: true
   title?: true
-  subtitle?: true
   slug?: true
   description?: true
-  welcomeMessage?: true
-  congratsMessage?: true
   thumbnail?: true
-  thumbnailPublicId?: true
-  promoVideo?: true
-  promoVideoPublicId?: true
   price?: true
   level?: true
   categoryId?: true
@@ -203,23 +197,20 @@ export type CourseMaxAggregateInputType = {
   metaImage?: true
   originalPrice?: true
   status?: true
+  promoVideo?: true
+  subtitle?: true
+  congratsMessage?: true
+  welcomeMessage?: true
+  thumbnailPublicId?: true
+  promoVideoPublicId?: true
 }
 
 export type CourseCountAggregateInputType = {
   id?: true
   title?: true
-  subtitle?: true
   slug?: true
   description?: true
-  learningObjectives?: true
-  prerequisites?: true
-  targetAudience?: true
-  welcomeMessage?: true
-  congratsMessage?: true
   thumbnail?: true
-  thumbnailPublicId?: true
-  promoVideo?: true
-  promoVideoPublicId?: true
   price?: true
   level?: true
   categoryId?: true
@@ -236,6 +227,15 @@ export type CourseCountAggregateInputType = {
   metaSchema?: true
   originalPrice?: true
   status?: true
+  promoVideo?: true
+  subtitle?: true
+  congratsMessage?: true
+  welcomeMessage?: true
+  learningObjectives?: true
+  prerequisites?: true
+  targetAudience?: true
+  thumbnailPublicId?: true
+  promoVideoPublicId?: true
   _all?: true
 }
 
@@ -328,18 +328,9 @@ export type CourseGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 export type CourseGroupByOutputType = {
   id: string
   title: string
-  subtitle: string | null
   slug: string
   description: string
-  learningObjectives: string[]
-  prerequisites: string[]
-  targetAudience: string[]
-  welcomeMessage: string
-  congratsMessage: string
   thumbnail: string | null
-  thumbnailPublicId: string | null
-  promoVideo: string | null
-  promoVideoPublicId: string | null
   price: number
   level: $Enums.CourseLevel
   categoryId: string
@@ -356,6 +347,15 @@ export type CourseGroupByOutputType = {
   metaSchema: runtime.JsonValue | null
   originalPrice: number
   status: string
+  promoVideo: string | null
+  subtitle: string | null
+  congratsMessage: string
+  welcomeMessage: string
+  learningObjectives: string[]
+  prerequisites: string[]
+  targetAudience: string[]
+  thumbnailPublicId: string | null
+  promoVideoPublicId: string | null
   _count: CourseCountAggregateOutputType | null
   _avg: CourseAvgAggregateOutputType | null
   _sum: CourseSumAggregateOutputType | null
@@ -384,18 +384,9 @@ export type CourseWhereInput = {
   NOT?: Prisma.CourseWhereInput | Prisma.CourseWhereInput[]
   id?: Prisma.StringFilter<"Course"> | string
   title?: Prisma.StringFilter<"Course"> | string
-  subtitle?: Prisma.StringNullableFilter<"Course"> | string | null
   slug?: Prisma.StringFilter<"Course"> | string
   description?: Prisma.StringFilter<"Course"> | string
-  learningObjectives?: Prisma.StringNullableListFilter<"Course">
-  prerequisites?: Prisma.StringNullableListFilter<"Course">
-  targetAudience?: Prisma.StringNullableListFilter<"Course">
-  welcomeMessage?: Prisma.StringFilter<"Course"> | string
-  congratsMessage?: Prisma.StringFilter<"Course"> | string
   thumbnail?: Prisma.StringNullableFilter<"Course"> | string | null
-  thumbnailPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
-  promoVideo?: Prisma.StringNullableFilter<"Course"> | string | null
-  promoVideoPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
   price?: Prisma.FloatFilter<"Course"> | number
   level?: Prisma.EnumCourseLevelFilter<"Course"> | $Enums.CourseLevel
   categoryId?: Prisma.StringFilter<"Course"> | string
@@ -412,6 +403,15 @@ export type CourseWhereInput = {
   metaSchema?: Prisma.JsonNullableFilter<"Course">
   originalPrice?: Prisma.FloatFilter<"Course"> | number
   status?: Prisma.StringFilter<"Course"> | string
+  promoVideo?: Prisma.StringNullableFilter<"Course"> | string | null
+  subtitle?: Prisma.StringNullableFilter<"Course"> | string | null
+  congratsMessage?: Prisma.StringFilter<"Course"> | string
+  welcomeMessage?: Prisma.StringFilter<"Course"> | string
+  learningObjectives?: Prisma.StringNullableListFilter<"Course">
+  prerequisites?: Prisma.StringNullableListFilter<"Course">
+  targetAudience?: Prisma.StringNullableListFilter<"Course">
+  thumbnailPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
+  promoVideoPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
   category?: Prisma.XOR<Prisma.CategoryScalarRelationFilter, Prisma.CategoryWhereInput>
   instructor?: Prisma.XOR<Prisma.InstructorProfileScalarRelationFilter, Prisma.InstructorProfileWhereInput>
   enrollments?: Prisma.EnrollmentListRelationFilter
@@ -424,18 +424,9 @@ export type CourseWhereInput = {
 export type CourseOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  subtitle?: Prisma.SortOrderInput | Prisma.SortOrder
   slug?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  learningObjectives?: Prisma.SortOrder
-  prerequisites?: Prisma.SortOrder
-  targetAudience?: Prisma.SortOrder
-  welcomeMessage?: Prisma.SortOrder
-  congratsMessage?: Prisma.SortOrder
   thumbnail?: Prisma.SortOrderInput | Prisma.SortOrder
-  thumbnailPublicId?: Prisma.SortOrderInput | Prisma.SortOrder
-  promoVideo?: Prisma.SortOrderInput | Prisma.SortOrder
-  promoVideoPublicId?: Prisma.SortOrderInput | Prisma.SortOrder
   price?: Prisma.SortOrder
   level?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
@@ -452,6 +443,15 @@ export type CourseOrderByWithRelationInput = {
   metaSchema?: Prisma.SortOrderInput | Prisma.SortOrder
   originalPrice?: Prisma.SortOrder
   status?: Prisma.SortOrder
+  promoVideo?: Prisma.SortOrderInput | Prisma.SortOrder
+  subtitle?: Prisma.SortOrderInput | Prisma.SortOrder
+  congratsMessage?: Prisma.SortOrder
+  welcomeMessage?: Prisma.SortOrder
+  learningObjectives?: Prisma.SortOrder
+  prerequisites?: Prisma.SortOrder
+  targetAudience?: Prisma.SortOrder
+  thumbnailPublicId?: Prisma.SortOrderInput | Prisma.SortOrder
+  promoVideoPublicId?: Prisma.SortOrderInput | Prisma.SortOrder
   category?: Prisma.CategoryOrderByWithRelationInput
   instructor?: Prisma.InstructorProfileOrderByWithRelationInput
   enrollments?: Prisma.EnrollmentOrderByRelationAggregateInput
@@ -468,17 +468,8 @@ export type CourseWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.CourseWhereInput[]
   NOT?: Prisma.CourseWhereInput | Prisma.CourseWhereInput[]
   title?: Prisma.StringFilter<"Course"> | string
-  subtitle?: Prisma.StringNullableFilter<"Course"> | string | null
   description?: Prisma.StringFilter<"Course"> | string
-  learningObjectives?: Prisma.StringNullableListFilter<"Course">
-  prerequisites?: Prisma.StringNullableListFilter<"Course">
-  targetAudience?: Prisma.StringNullableListFilter<"Course">
-  welcomeMessage?: Prisma.StringFilter<"Course"> | string
-  congratsMessage?: Prisma.StringFilter<"Course"> | string
   thumbnail?: Prisma.StringNullableFilter<"Course"> | string | null
-  thumbnailPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
-  promoVideo?: Prisma.StringNullableFilter<"Course"> | string | null
-  promoVideoPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
   price?: Prisma.FloatFilter<"Course"> | number
   level?: Prisma.EnumCourseLevelFilter<"Course"> | $Enums.CourseLevel
   categoryId?: Prisma.StringFilter<"Course"> | string
@@ -495,6 +486,15 @@ export type CourseWhereUniqueInput = Prisma.AtLeast<{
   metaSchema?: Prisma.JsonNullableFilter<"Course">
   originalPrice?: Prisma.FloatFilter<"Course"> | number
   status?: Prisma.StringFilter<"Course"> | string
+  promoVideo?: Prisma.StringNullableFilter<"Course"> | string | null
+  subtitle?: Prisma.StringNullableFilter<"Course"> | string | null
+  congratsMessage?: Prisma.StringFilter<"Course"> | string
+  welcomeMessage?: Prisma.StringFilter<"Course"> | string
+  learningObjectives?: Prisma.StringNullableListFilter<"Course">
+  prerequisites?: Prisma.StringNullableListFilter<"Course">
+  targetAudience?: Prisma.StringNullableListFilter<"Course">
+  thumbnailPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
+  promoVideoPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
   category?: Prisma.XOR<Prisma.CategoryScalarRelationFilter, Prisma.CategoryWhereInput>
   instructor?: Prisma.XOR<Prisma.InstructorProfileScalarRelationFilter, Prisma.InstructorProfileWhereInput>
   enrollments?: Prisma.EnrollmentListRelationFilter
@@ -507,18 +507,9 @@ export type CourseWhereUniqueInput = Prisma.AtLeast<{
 export type CourseOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  subtitle?: Prisma.SortOrderInput | Prisma.SortOrder
   slug?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  learningObjectives?: Prisma.SortOrder
-  prerequisites?: Prisma.SortOrder
-  targetAudience?: Prisma.SortOrder
-  welcomeMessage?: Prisma.SortOrder
-  congratsMessage?: Prisma.SortOrder
   thumbnail?: Prisma.SortOrderInput | Prisma.SortOrder
-  thumbnailPublicId?: Prisma.SortOrderInput | Prisma.SortOrder
-  promoVideo?: Prisma.SortOrderInput | Prisma.SortOrder
-  promoVideoPublicId?: Prisma.SortOrderInput | Prisma.SortOrder
   price?: Prisma.SortOrder
   level?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
@@ -535,6 +526,15 @@ export type CourseOrderByWithAggregationInput = {
   metaSchema?: Prisma.SortOrderInput | Prisma.SortOrder
   originalPrice?: Prisma.SortOrder
   status?: Prisma.SortOrder
+  promoVideo?: Prisma.SortOrderInput | Prisma.SortOrder
+  subtitle?: Prisma.SortOrderInput | Prisma.SortOrder
+  congratsMessage?: Prisma.SortOrder
+  welcomeMessage?: Prisma.SortOrder
+  learningObjectives?: Prisma.SortOrder
+  prerequisites?: Prisma.SortOrder
+  targetAudience?: Prisma.SortOrder
+  thumbnailPublicId?: Prisma.SortOrderInput | Prisma.SortOrder
+  promoVideoPublicId?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.CourseCountOrderByAggregateInput
   _avg?: Prisma.CourseAvgOrderByAggregateInput
   _max?: Prisma.CourseMaxOrderByAggregateInput
@@ -548,18 +548,9 @@ export type CourseScalarWhereWithAggregatesInput = {
   NOT?: Prisma.CourseScalarWhereWithAggregatesInput | Prisma.CourseScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Course"> | string
   title?: Prisma.StringWithAggregatesFilter<"Course"> | string
-  subtitle?: Prisma.StringNullableWithAggregatesFilter<"Course"> | string | null
   slug?: Prisma.StringWithAggregatesFilter<"Course"> | string
   description?: Prisma.StringWithAggregatesFilter<"Course"> | string
-  learningObjectives?: Prisma.StringNullableListFilter<"Course">
-  prerequisites?: Prisma.StringNullableListFilter<"Course">
-  targetAudience?: Prisma.StringNullableListFilter<"Course">
-  welcomeMessage?: Prisma.StringWithAggregatesFilter<"Course"> | string
-  congratsMessage?: Prisma.StringWithAggregatesFilter<"Course"> | string
   thumbnail?: Prisma.StringNullableWithAggregatesFilter<"Course"> | string | null
-  thumbnailPublicId?: Prisma.StringNullableWithAggregatesFilter<"Course"> | string | null
-  promoVideo?: Prisma.StringNullableWithAggregatesFilter<"Course"> | string | null
-  promoVideoPublicId?: Prisma.StringNullableWithAggregatesFilter<"Course"> | string | null
   price?: Prisma.FloatWithAggregatesFilter<"Course"> | number
   level?: Prisma.EnumCourseLevelWithAggregatesFilter<"Course"> | $Enums.CourseLevel
   categoryId?: Prisma.StringWithAggregatesFilter<"Course"> | string
@@ -576,23 +567,23 @@ export type CourseScalarWhereWithAggregatesInput = {
   metaSchema?: Prisma.JsonNullableWithAggregatesFilter<"Course">
   originalPrice?: Prisma.FloatWithAggregatesFilter<"Course"> | number
   status?: Prisma.StringWithAggregatesFilter<"Course"> | string
+  promoVideo?: Prisma.StringNullableWithAggregatesFilter<"Course"> | string | null
+  subtitle?: Prisma.StringNullableWithAggregatesFilter<"Course"> | string | null
+  congratsMessage?: Prisma.StringWithAggregatesFilter<"Course"> | string
+  welcomeMessage?: Prisma.StringWithAggregatesFilter<"Course"> | string
+  learningObjectives?: Prisma.StringNullableListFilter<"Course">
+  prerequisites?: Prisma.StringNullableListFilter<"Course">
+  targetAudience?: Prisma.StringNullableListFilter<"Course">
+  thumbnailPublicId?: Prisma.StringNullableWithAggregatesFilter<"Course"> | string | null
+  promoVideoPublicId?: Prisma.StringNullableWithAggregatesFilter<"Course"> | string | null
 }
 
 export type CourseCreateInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   createdAt?: Date | string
@@ -607,6 +598,15 @@ export type CourseCreateInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   category: Prisma.CategoryCreateNestedOneWithoutCoursesInput
   instructor: Prisma.InstructorProfileCreateNestedOneWithoutCoursesInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutCourseInput
@@ -619,18 +619,9 @@ export type CourseCreateInput = {
 export type CourseUncheckedCreateInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   categoryId: string
@@ -647,6 +638,15 @@ export type CourseUncheckedCreateInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutCourseInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCourseInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCourseInput
@@ -657,18 +657,9 @@ export type CourseUncheckedCreateInput = {
 export type CourseUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -683,6 +674,15 @@ export type CourseUpdateInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.CategoryUpdateOneRequiredWithoutCoursesNestedInput
   instructor?: Prisma.InstructorProfileUpdateOneRequiredWithoutCoursesNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutCourseNestedInput
@@ -695,18 +695,9 @@ export type CourseUpdateInput = {
 export type CourseUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -723,6 +714,15 @@ export type CourseUncheckedUpdateInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutCourseNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutCourseNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCourseNestedInput
@@ -733,18 +733,9 @@ export type CourseUncheckedUpdateInput = {
 export type CourseCreateManyInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   categoryId: string
@@ -761,23 +752,23 @@ export type CourseCreateManyInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
 }
 
 export type CourseUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -792,23 +783,23 @@ export type CourseUpdateManyMutationInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CourseUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -825,6 +816,15 @@ export type CourseUncheckedUpdateManyInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CourseListRelationFilter = {
@@ -848,18 +848,9 @@ export type StringNullableListFilter<$PrismaModel = never> = {
 export type CourseCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  subtitle?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  learningObjectives?: Prisma.SortOrder
-  prerequisites?: Prisma.SortOrder
-  targetAudience?: Prisma.SortOrder
-  welcomeMessage?: Prisma.SortOrder
-  congratsMessage?: Prisma.SortOrder
   thumbnail?: Prisma.SortOrder
-  thumbnailPublicId?: Prisma.SortOrder
-  promoVideo?: Prisma.SortOrder
-  promoVideoPublicId?: Prisma.SortOrder
   price?: Prisma.SortOrder
   level?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
@@ -876,6 +867,15 @@ export type CourseCountOrderByAggregateInput = {
   metaSchema?: Prisma.SortOrder
   originalPrice?: Prisma.SortOrder
   status?: Prisma.SortOrder
+  promoVideo?: Prisma.SortOrder
+  subtitle?: Prisma.SortOrder
+  congratsMessage?: Prisma.SortOrder
+  welcomeMessage?: Prisma.SortOrder
+  learningObjectives?: Prisma.SortOrder
+  prerequisites?: Prisma.SortOrder
+  targetAudience?: Prisma.SortOrder
+  thumbnailPublicId?: Prisma.SortOrder
+  promoVideoPublicId?: Prisma.SortOrder
 }
 
 export type CourseAvgOrderByAggregateInput = {
@@ -888,15 +888,9 @@ export type CourseAvgOrderByAggregateInput = {
 export type CourseMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  subtitle?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  welcomeMessage?: Prisma.SortOrder
-  congratsMessage?: Prisma.SortOrder
   thumbnail?: Prisma.SortOrder
-  thumbnailPublicId?: Prisma.SortOrder
-  promoVideo?: Prisma.SortOrder
-  promoVideoPublicId?: Prisma.SortOrder
   price?: Prisma.SortOrder
   level?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
@@ -912,20 +906,20 @@ export type CourseMaxOrderByAggregateInput = {
   metaImage?: Prisma.SortOrder
   originalPrice?: Prisma.SortOrder
   status?: Prisma.SortOrder
+  promoVideo?: Prisma.SortOrder
+  subtitle?: Prisma.SortOrder
+  congratsMessage?: Prisma.SortOrder
+  welcomeMessage?: Prisma.SortOrder
+  thumbnailPublicId?: Prisma.SortOrder
+  promoVideoPublicId?: Prisma.SortOrder
 }
 
 export type CourseMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  subtitle?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  welcomeMessage?: Prisma.SortOrder
-  congratsMessage?: Prisma.SortOrder
   thumbnail?: Prisma.SortOrder
-  thumbnailPublicId?: Prisma.SortOrder
-  promoVideo?: Prisma.SortOrder
-  promoVideoPublicId?: Prisma.SortOrder
   price?: Prisma.SortOrder
   level?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
@@ -941,6 +935,12 @@ export type CourseMinOrderByAggregateInput = {
   metaImage?: Prisma.SortOrder
   originalPrice?: Prisma.SortOrder
   status?: Prisma.SortOrder
+  promoVideo?: Prisma.SortOrder
+  subtitle?: Prisma.SortOrder
+  congratsMessage?: Prisma.SortOrder
+  welcomeMessage?: Prisma.SortOrder
+  thumbnailPublicId?: Prisma.SortOrder
+  promoVideoPublicId?: Prisma.SortOrder
 }
 
 export type CourseSumOrderByAggregateInput = {
@@ -1009,6 +1009,18 @@ export type CourseCreatetargetAudienceInput = {
   set: string[]
 }
 
+export type FloatFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
+export type EnumCourseLevelFieldUpdateOperationsInput = {
+  set?: $Enums.CourseLevel
+}
+
 export type CourseUpdatelearningObjectivesInput = {
   set?: string[]
   push?: string | string[]
@@ -1022,18 +1034,6 @@ export type CourseUpdateprerequisitesInput = {
 export type CourseUpdatetargetAudienceInput = {
   set?: string[]
   push?: string | string[]
-}
-
-export type FloatFieldUpdateOperationsInput = {
-  set?: number
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
-}
-
-export type EnumCourseLevelFieldUpdateOperationsInput = {
-  set?: $Enums.CourseLevel
 }
 
 export type CourseCreateNestedOneWithoutSectionsInput = {
@@ -1151,18 +1151,9 @@ export type CourseUpdateOneRequiredWithoutOrdersNestedInput = {
 export type CourseCreateWithoutInstructorInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   createdAt?: Date | string
@@ -1177,6 +1168,15 @@ export type CourseCreateWithoutInstructorInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   category: Prisma.CategoryCreateNestedOneWithoutCoursesInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutCourseInput
   orders?: Prisma.OrderCreateNestedManyWithoutCourseInput
@@ -1188,18 +1188,9 @@ export type CourseCreateWithoutInstructorInput = {
 export type CourseUncheckedCreateWithoutInstructorInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   categoryId: string
@@ -1215,6 +1206,15 @@ export type CourseUncheckedCreateWithoutInstructorInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutCourseInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCourseInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCourseInput
@@ -1254,18 +1254,9 @@ export type CourseScalarWhereInput = {
   NOT?: Prisma.CourseScalarWhereInput | Prisma.CourseScalarWhereInput[]
   id?: Prisma.StringFilter<"Course"> | string
   title?: Prisma.StringFilter<"Course"> | string
-  subtitle?: Prisma.StringNullableFilter<"Course"> | string | null
   slug?: Prisma.StringFilter<"Course"> | string
   description?: Prisma.StringFilter<"Course"> | string
-  learningObjectives?: Prisma.StringNullableListFilter<"Course">
-  prerequisites?: Prisma.StringNullableListFilter<"Course">
-  targetAudience?: Prisma.StringNullableListFilter<"Course">
-  welcomeMessage?: Prisma.StringFilter<"Course"> | string
-  congratsMessage?: Prisma.StringFilter<"Course"> | string
   thumbnail?: Prisma.StringNullableFilter<"Course"> | string | null
-  thumbnailPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
-  promoVideo?: Prisma.StringNullableFilter<"Course"> | string | null
-  promoVideoPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
   price?: Prisma.FloatFilter<"Course"> | number
   level?: Prisma.EnumCourseLevelFilter<"Course"> | $Enums.CourseLevel
   categoryId?: Prisma.StringFilter<"Course"> | string
@@ -1282,23 +1273,23 @@ export type CourseScalarWhereInput = {
   metaSchema?: Prisma.JsonNullableFilter<"Course">
   originalPrice?: Prisma.FloatFilter<"Course"> | number
   status?: Prisma.StringFilter<"Course"> | string
+  promoVideo?: Prisma.StringNullableFilter<"Course"> | string | null
+  subtitle?: Prisma.StringNullableFilter<"Course"> | string | null
+  congratsMessage?: Prisma.StringFilter<"Course"> | string
+  welcomeMessage?: Prisma.StringFilter<"Course"> | string
+  learningObjectives?: Prisma.StringNullableListFilter<"Course">
+  prerequisites?: Prisma.StringNullableListFilter<"Course">
+  targetAudience?: Prisma.StringNullableListFilter<"Course">
+  thumbnailPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
+  promoVideoPublicId?: Prisma.StringNullableFilter<"Course"> | string | null
 }
 
 export type CourseCreateWithoutSectionsInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   createdAt?: Date | string
@@ -1313,6 +1304,15 @@ export type CourseCreateWithoutSectionsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   category: Prisma.CategoryCreateNestedOneWithoutCoursesInput
   instructor: Prisma.InstructorProfileCreateNestedOneWithoutCoursesInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutCourseInput
@@ -1324,18 +1324,9 @@ export type CourseCreateWithoutSectionsInput = {
 export type CourseUncheckedCreateWithoutSectionsInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   categoryId: string
@@ -1352,6 +1343,15 @@ export type CourseUncheckedCreateWithoutSectionsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutCourseInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCourseInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCourseInput
@@ -1377,18 +1377,9 @@ export type CourseUpdateToOneWithWhereWithoutSectionsInput = {
 export type CourseUpdateWithoutSectionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1403,6 +1394,15 @@ export type CourseUpdateWithoutSectionsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.CategoryUpdateOneRequiredWithoutCoursesNestedInput
   instructor?: Prisma.InstructorProfileUpdateOneRequiredWithoutCoursesNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutCourseNestedInput
@@ -1414,18 +1414,9 @@ export type CourseUpdateWithoutSectionsInput = {
 export type CourseUncheckedUpdateWithoutSectionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1442,6 +1433,15 @@ export type CourseUncheckedUpdateWithoutSectionsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutCourseNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutCourseNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCourseNestedInput
@@ -1451,18 +1451,9 @@ export type CourseUncheckedUpdateWithoutSectionsInput = {
 export type CourseCreateWithoutEnrollmentsInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   createdAt?: Date | string
@@ -1477,6 +1468,15 @@ export type CourseCreateWithoutEnrollmentsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   category: Prisma.CategoryCreateNestedOneWithoutCoursesInput
   instructor: Prisma.InstructorProfileCreateNestedOneWithoutCoursesInput
   orders?: Prisma.OrderCreateNestedManyWithoutCourseInput
@@ -1488,18 +1488,9 @@ export type CourseCreateWithoutEnrollmentsInput = {
 export type CourseUncheckedCreateWithoutEnrollmentsInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   categoryId: string
@@ -1516,6 +1507,15 @@ export type CourseUncheckedCreateWithoutEnrollmentsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCourseInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCourseInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutCourseInput
@@ -1541,18 +1541,9 @@ export type CourseUpdateToOneWithWhereWithoutEnrollmentsInput = {
 export type CourseUpdateWithoutEnrollmentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1567,6 +1558,15 @@ export type CourseUpdateWithoutEnrollmentsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.CategoryUpdateOneRequiredWithoutCoursesNestedInput
   instructor?: Prisma.InstructorProfileUpdateOneRequiredWithoutCoursesNestedInput
   orders?: Prisma.OrderUpdateManyWithoutCourseNestedInput
@@ -1578,18 +1578,9 @@ export type CourseUpdateWithoutEnrollmentsInput = {
 export type CourseUncheckedUpdateWithoutEnrollmentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1606,6 +1597,15 @@ export type CourseUncheckedUpdateWithoutEnrollmentsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   orders?: Prisma.OrderUncheckedUpdateManyWithoutCourseNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCourseNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutCourseNestedInput
@@ -1615,18 +1615,9 @@ export type CourseUncheckedUpdateWithoutEnrollmentsInput = {
 export type CourseCreateWithoutReviewsInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   createdAt?: Date | string
@@ -1641,6 +1632,15 @@ export type CourseCreateWithoutReviewsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   category: Prisma.CategoryCreateNestedOneWithoutCoursesInput
   instructor: Prisma.InstructorProfileCreateNestedOneWithoutCoursesInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutCourseInput
@@ -1652,18 +1652,9 @@ export type CourseCreateWithoutReviewsInput = {
 export type CourseUncheckedCreateWithoutReviewsInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   categoryId: string
@@ -1680,6 +1671,15 @@ export type CourseUncheckedCreateWithoutReviewsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutCourseInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCourseInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCourseInput
@@ -1705,18 +1705,9 @@ export type CourseUpdateToOneWithWhereWithoutReviewsInput = {
 export type CourseUpdateWithoutReviewsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1731,6 +1722,15 @@ export type CourseUpdateWithoutReviewsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.CategoryUpdateOneRequiredWithoutCoursesNestedInput
   instructor?: Prisma.InstructorProfileUpdateOneRequiredWithoutCoursesNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutCourseNestedInput
@@ -1742,18 +1742,9 @@ export type CourseUpdateWithoutReviewsInput = {
 export type CourseUncheckedUpdateWithoutReviewsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1770,6 +1761,15 @@ export type CourseUncheckedUpdateWithoutReviewsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutCourseNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutCourseNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCourseNestedInput
@@ -1779,18 +1779,9 @@ export type CourseUncheckedUpdateWithoutReviewsInput = {
 export type CourseCreateWithoutCategoryInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   createdAt?: Date | string
@@ -1805,6 +1796,15 @@ export type CourseCreateWithoutCategoryInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   instructor: Prisma.InstructorProfileCreateNestedOneWithoutCoursesInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutCourseInput
   orders?: Prisma.OrderCreateNestedManyWithoutCourseInput
@@ -1816,18 +1816,9 @@ export type CourseCreateWithoutCategoryInput = {
 export type CourseUncheckedCreateWithoutCategoryInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   instructorId: string
@@ -1843,6 +1834,15 @@ export type CourseUncheckedCreateWithoutCategoryInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutCourseInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCourseInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCourseInput
@@ -1879,18 +1879,9 @@ export type CourseUpdateManyWithWhereWithoutCategoryInput = {
 export type CourseCreateWithoutPaymentsInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   createdAt?: Date | string
@@ -1905,6 +1896,15 @@ export type CourseCreateWithoutPaymentsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   category: Prisma.CategoryCreateNestedOneWithoutCoursesInput
   instructor: Prisma.InstructorProfileCreateNestedOneWithoutCoursesInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutCourseInput
@@ -1916,18 +1916,9 @@ export type CourseCreateWithoutPaymentsInput = {
 export type CourseUncheckedCreateWithoutPaymentsInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   categoryId: string
@@ -1944,6 +1935,15 @@ export type CourseUncheckedCreateWithoutPaymentsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutCourseInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCourseInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutCourseInput
@@ -1969,18 +1969,9 @@ export type CourseUpdateToOneWithWhereWithoutPaymentsInput = {
 export type CourseUpdateWithoutPaymentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1995,6 +1986,15 @@ export type CourseUpdateWithoutPaymentsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.CategoryUpdateOneRequiredWithoutCoursesNestedInput
   instructor?: Prisma.InstructorProfileUpdateOneRequiredWithoutCoursesNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutCourseNestedInput
@@ -2006,18 +2006,9 @@ export type CourseUpdateWithoutPaymentsInput = {
 export type CourseUncheckedUpdateWithoutPaymentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -2034,6 +2025,15 @@ export type CourseUncheckedUpdateWithoutPaymentsInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutCourseNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutCourseNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutCourseNestedInput
@@ -2043,18 +2043,9 @@ export type CourseUncheckedUpdateWithoutPaymentsInput = {
 export type CourseCreateWithoutOrdersInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   createdAt?: Date | string
@@ -2069,6 +2060,15 @@ export type CourseCreateWithoutOrdersInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   category: Prisma.CategoryCreateNestedOneWithoutCoursesInput
   instructor: Prisma.InstructorProfileCreateNestedOneWithoutCoursesInput
   enrollments?: Prisma.EnrollmentCreateNestedManyWithoutCourseInput
@@ -2080,18 +2080,9 @@ export type CourseCreateWithoutOrdersInput = {
 export type CourseUncheckedCreateWithoutOrdersInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   categoryId: string
@@ -2108,6 +2099,15 @@ export type CourseUncheckedCreateWithoutOrdersInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
   enrollments?: Prisma.EnrollmentUncheckedCreateNestedManyWithoutCourseInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCourseInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutCourseInput
@@ -2133,18 +2133,9 @@ export type CourseUpdateToOneWithWhereWithoutOrdersInput = {
 export type CourseUpdateWithoutOrdersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2159,6 +2150,15 @@ export type CourseUpdateWithoutOrdersInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.CategoryUpdateOneRequiredWithoutCoursesNestedInput
   instructor?: Prisma.InstructorProfileUpdateOneRequiredWithoutCoursesNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutCourseNestedInput
@@ -2170,18 +2170,9 @@ export type CourseUpdateWithoutOrdersInput = {
 export type CourseUncheckedUpdateWithoutOrdersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -2198,6 +2189,15 @@ export type CourseUncheckedUpdateWithoutOrdersInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutCourseNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCourseNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutCourseNestedInput
@@ -2207,18 +2207,9 @@ export type CourseUncheckedUpdateWithoutOrdersInput = {
 export type CourseCreateManyInstructorInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   categoryId: string
@@ -2234,23 +2225,23 @@ export type CourseCreateManyInstructorInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
 }
 
 export type CourseUpdateWithoutInstructorInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2265,6 +2256,15 @@ export type CourseUpdateWithoutInstructorInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   category?: Prisma.CategoryUpdateOneRequiredWithoutCoursesNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutCourseNestedInput
   orders?: Prisma.OrderUpdateManyWithoutCourseNestedInput
@@ -2276,18 +2276,9 @@ export type CourseUpdateWithoutInstructorInput = {
 export type CourseUncheckedUpdateWithoutInstructorInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -2303,6 +2294,15 @@ export type CourseUncheckedUpdateWithoutInstructorInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutCourseNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutCourseNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCourseNestedInput
@@ -2313,18 +2313,9 @@ export type CourseUncheckedUpdateWithoutInstructorInput = {
 export type CourseUncheckedUpdateManyWithoutInstructorInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -2340,23 +2331,23 @@ export type CourseUncheckedUpdateManyWithoutInstructorInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CourseCreateManyCategoryInput = {
   id?: string
   title: string
-  subtitle?: string | null
   slug: string
   description: string
-  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
-  welcomeMessage?: string
-  congratsMessage?: string
   thumbnail?: string | null
-  thumbnailPublicId?: string | null
-  promoVideo?: string | null
-  promoVideoPublicId?: string | null
   price: number
   level: $Enums.CourseLevel
   instructorId: string
@@ -2372,23 +2363,23 @@ export type CourseCreateManyCategoryInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: number
   status: string
+  promoVideo?: string | null
+  subtitle?: string | null
+  congratsMessage?: string
+  welcomeMessage?: string
+  learningObjectives?: Prisma.CourseCreatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseCreateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseCreatetargetAudienceInput | string[]
+  thumbnailPublicId?: string | null
+  promoVideoPublicId?: string | null
 }
 
 export type CourseUpdateWithoutCategoryInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2403,6 +2394,15 @@ export type CourseUpdateWithoutCategoryInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instructor?: Prisma.InstructorProfileUpdateOneRequiredWithoutCoursesNestedInput
   enrollments?: Prisma.EnrollmentUpdateManyWithoutCourseNestedInput
   orders?: Prisma.OrderUpdateManyWithoutCourseNestedInput
@@ -2414,18 +2414,9 @@ export type CourseUpdateWithoutCategoryInput = {
 export type CourseUncheckedUpdateWithoutCategoryInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   instructorId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -2441,6 +2432,15 @@ export type CourseUncheckedUpdateWithoutCategoryInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   enrollments?: Prisma.EnrollmentUncheckedUpdateManyWithoutCourseNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutCourseNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCourseNestedInput
@@ -2451,18 +2451,9 @@ export type CourseUncheckedUpdateWithoutCategoryInput = {
 export type CourseUncheckedUpdateManyWithoutCategoryInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
-  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
-  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
-  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
-  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
   thumbnail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.FloatFieldUpdateOperationsInput | number
   level?: Prisma.EnumCourseLevelFieldUpdateOperationsInput | $Enums.CourseLevel
   instructorId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -2478,6 +2469,15 @@ export type CourseUncheckedUpdateManyWithoutCategoryInput = {
   metaSchema?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   originalPrice?: Prisma.FloatFieldUpdateOperationsInput | number
   status?: Prisma.StringFieldUpdateOperationsInput | string
+  promoVideo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subtitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  congratsMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  welcomeMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  learningObjectives?: Prisma.CourseUpdatelearningObjectivesInput | string[]
+  prerequisites?: Prisma.CourseUpdateprerequisitesInput | string[]
+  targetAudience?: Prisma.CourseUpdatetargetAudienceInput | string[]
+  thumbnailPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  promoVideoPublicId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -2550,18 +2550,9 @@ export type CourseCountOutputTypeCountSectionsArgs<ExtArgs extends runtime.Types
 export type CourseSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   title?: boolean
-  subtitle?: boolean
   slug?: boolean
   description?: boolean
-  learningObjectives?: boolean
-  prerequisites?: boolean
-  targetAudience?: boolean
-  welcomeMessage?: boolean
-  congratsMessage?: boolean
   thumbnail?: boolean
-  thumbnailPublicId?: boolean
-  promoVideo?: boolean
-  promoVideoPublicId?: boolean
   price?: boolean
   level?: boolean
   categoryId?: boolean
@@ -2578,6 +2569,15 @@ export type CourseSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   metaSchema?: boolean
   originalPrice?: boolean
   status?: boolean
+  promoVideo?: boolean
+  subtitle?: boolean
+  congratsMessage?: boolean
+  welcomeMessage?: boolean
+  learningObjectives?: boolean
+  prerequisites?: boolean
+  targetAudience?: boolean
+  thumbnailPublicId?: boolean
+  promoVideoPublicId?: boolean
   category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
   instructor?: boolean | Prisma.InstructorProfileDefaultArgs<ExtArgs>
   enrollments?: boolean | Prisma.Course$enrollmentsArgs<ExtArgs>
@@ -2591,18 +2591,9 @@ export type CourseSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
 export type CourseSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   title?: boolean
-  subtitle?: boolean
   slug?: boolean
   description?: boolean
-  learningObjectives?: boolean
-  prerequisites?: boolean
-  targetAudience?: boolean
-  welcomeMessage?: boolean
-  congratsMessage?: boolean
   thumbnail?: boolean
-  thumbnailPublicId?: boolean
-  promoVideo?: boolean
-  promoVideoPublicId?: boolean
   price?: boolean
   level?: boolean
   categoryId?: boolean
@@ -2619,6 +2610,15 @@ export type CourseSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
   metaSchema?: boolean
   originalPrice?: boolean
   status?: boolean
+  promoVideo?: boolean
+  subtitle?: boolean
+  congratsMessage?: boolean
+  welcomeMessage?: boolean
+  learningObjectives?: boolean
+  prerequisites?: boolean
+  targetAudience?: boolean
+  thumbnailPublicId?: boolean
+  promoVideoPublicId?: boolean
   category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
   instructor?: boolean | Prisma.InstructorProfileDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["course"]>
@@ -2626,18 +2626,9 @@ export type CourseSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
 export type CourseSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   title?: boolean
-  subtitle?: boolean
   slug?: boolean
   description?: boolean
-  learningObjectives?: boolean
-  prerequisites?: boolean
-  targetAudience?: boolean
-  welcomeMessage?: boolean
-  congratsMessage?: boolean
   thumbnail?: boolean
-  thumbnailPublicId?: boolean
-  promoVideo?: boolean
-  promoVideoPublicId?: boolean
   price?: boolean
   level?: boolean
   categoryId?: boolean
@@ -2654,6 +2645,15 @@ export type CourseSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
   metaSchema?: boolean
   originalPrice?: boolean
   status?: boolean
+  promoVideo?: boolean
+  subtitle?: boolean
+  congratsMessage?: boolean
+  welcomeMessage?: boolean
+  learningObjectives?: boolean
+  prerequisites?: boolean
+  targetAudience?: boolean
+  thumbnailPublicId?: boolean
+  promoVideoPublicId?: boolean
   category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
   instructor?: boolean | Prisma.InstructorProfileDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["course"]>
@@ -2661,18 +2661,9 @@ export type CourseSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
 export type CourseSelectScalar = {
   id?: boolean
   title?: boolean
-  subtitle?: boolean
   slug?: boolean
   description?: boolean
-  learningObjectives?: boolean
-  prerequisites?: boolean
-  targetAudience?: boolean
-  welcomeMessage?: boolean
-  congratsMessage?: boolean
   thumbnail?: boolean
-  thumbnailPublicId?: boolean
-  promoVideo?: boolean
-  promoVideoPublicId?: boolean
   price?: boolean
   level?: boolean
   categoryId?: boolean
@@ -2689,9 +2680,18 @@ export type CourseSelectScalar = {
   metaSchema?: boolean
   originalPrice?: boolean
   status?: boolean
+  promoVideo?: boolean
+  subtitle?: boolean
+  congratsMessage?: boolean
+  welcomeMessage?: boolean
+  learningObjectives?: boolean
+  prerequisites?: boolean
+  targetAudience?: boolean
+  thumbnailPublicId?: boolean
+  promoVideoPublicId?: boolean
 }
 
-export type CourseOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "subtitle" | "slug" | "description" | "learningObjectives" | "prerequisites" | "targetAudience" | "welcomeMessage" | "congratsMessage" | "thumbnail" | "thumbnailPublicId" | "promoVideo" | "promoVideoPublicId" | "price" | "level" | "categoryId" | "instructorId" | "createdAt" | "updatedAt" | "published" | "totalDuration" | "totalLectures" | "seoTitle" | "seoDescription" | "seoKeywords" | "metaImage" | "metaSchema" | "originalPrice" | "status", ExtArgs["result"]["course"]>
+export type CourseOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "slug" | "description" | "thumbnail" | "price" | "level" | "categoryId" | "instructorId" | "createdAt" | "updatedAt" | "published" | "totalDuration" | "totalLectures" | "seoTitle" | "seoDescription" | "seoKeywords" | "metaImage" | "metaSchema" | "originalPrice" | "status" | "promoVideo" | "subtitle" | "congratsMessage" | "welcomeMessage" | "learningObjectives" | "prerequisites" | "targetAudience" | "thumbnailPublicId" | "promoVideoPublicId", ExtArgs["result"]["course"]>
 export type CourseInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
   instructor?: boolean | Prisma.InstructorProfileDefaultArgs<ExtArgs>
@@ -2725,18 +2725,9 @@ export type $CoursePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     title: string
-    subtitle: string | null
     slug: string
     description: string
-    learningObjectives: string[]
-    prerequisites: string[]
-    targetAudience: string[]
-    welcomeMessage: string
-    congratsMessage: string
     thumbnail: string | null
-    thumbnailPublicId: string | null
-    promoVideo: string | null
-    promoVideoPublicId: string | null
     price: number
     level: $Enums.CourseLevel
     categoryId: string
@@ -2753,6 +2744,15 @@ export type $CoursePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     metaSchema: runtime.JsonValue | null
     originalPrice: number
     status: string
+    promoVideo: string | null
+    subtitle: string | null
+    congratsMessage: string
+    welcomeMessage: string
+    learningObjectives: string[]
+    prerequisites: string[]
+    targetAudience: string[]
+    thumbnailPublicId: string | null
+    promoVideoPublicId: string | null
   }, ExtArgs["result"]["course"]>
   composites: {}
 }
@@ -3185,18 +3185,9 @@ export interface Prisma__CourseClient<T, Null = never, ExtArgs extends runtime.T
 export interface CourseFieldRefs {
   readonly id: Prisma.FieldRef<"Course", 'String'>
   readonly title: Prisma.FieldRef<"Course", 'String'>
-  readonly subtitle: Prisma.FieldRef<"Course", 'String'>
   readonly slug: Prisma.FieldRef<"Course", 'String'>
   readonly description: Prisma.FieldRef<"Course", 'String'>
-  readonly learningObjectives: Prisma.FieldRef<"Course", 'String[]'>
-  readonly prerequisites: Prisma.FieldRef<"Course", 'String[]'>
-  readonly targetAudience: Prisma.FieldRef<"Course", 'String[]'>
-  readonly welcomeMessage: Prisma.FieldRef<"Course", 'String'>
-  readonly congratsMessage: Prisma.FieldRef<"Course", 'String'>
   readonly thumbnail: Prisma.FieldRef<"Course", 'String'>
-  readonly thumbnailPublicId: Prisma.FieldRef<"Course", 'String'>
-  readonly promoVideo: Prisma.FieldRef<"Course", 'String'>
-  readonly promoVideoPublicId: Prisma.FieldRef<"Course", 'String'>
   readonly price: Prisma.FieldRef<"Course", 'Float'>
   readonly level: Prisma.FieldRef<"Course", 'CourseLevel'>
   readonly categoryId: Prisma.FieldRef<"Course", 'String'>
@@ -3213,6 +3204,15 @@ export interface CourseFieldRefs {
   readonly metaSchema: Prisma.FieldRef<"Course", 'Json'>
   readonly originalPrice: Prisma.FieldRef<"Course", 'Float'>
   readonly status: Prisma.FieldRef<"Course", 'String'>
+  readonly promoVideo: Prisma.FieldRef<"Course", 'String'>
+  readonly subtitle: Prisma.FieldRef<"Course", 'String'>
+  readonly congratsMessage: Prisma.FieldRef<"Course", 'String'>
+  readonly welcomeMessage: Prisma.FieldRef<"Course", 'String'>
+  readonly learningObjectives: Prisma.FieldRef<"Course", 'String[]'>
+  readonly prerequisites: Prisma.FieldRef<"Course", 'String[]'>
+  readonly targetAudience: Prisma.FieldRef<"Course", 'String[]'>
+  readonly thumbnailPublicId: Prisma.FieldRef<"Course", 'String'>
+  readonly promoVideoPublicId: Prisma.FieldRef<"Course", 'String'>
 }
     
 

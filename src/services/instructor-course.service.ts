@@ -23,7 +23,7 @@ export const createCourseService = async (title: string, userId: string) => {
       description: "",
       price: 0,
       level: "BEGINNER",
-      categoryId: "cmmr9w71j0000vouif9rejt28", // handle properly
+      categoryId: "cmpuxsi9b000464uip5m4yrha", // handle properly
       instructorId: instructorProfile?.id,
       status: "DRAFT",
       published: false,

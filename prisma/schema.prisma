@@ -102,18 +102,9 @@ model InstructorProfile {
 model Course {
   id                 String            @id @default(cuid())
   title              String
-  subtitle           String?
   slug               String            @unique
   description        String
-  learningObjectives String[]          @default([])
-  prerequisites      String[]          @default([])
-  targetAudience     String[]          @default([])
-  welcomeMessage     String            @default("Welcome to the course! We're excited to have you on board. Get ready to embark on a learning journey that will expand your knowledge and skills. Let's dive in and start learning together!")
-  congratsMessage    String            @default("Congratulations! You've completed the course. We hope you've gained valuable knowledge and skills.")
   thumbnail          String?
-  thumbnailPublicId  String?
-  promoVideo         String?
-  promoVideoPublicId String?
   price              Float
   level              CourseLevel
   categoryId         String
@@ -130,6 +121,15 @@ model Course {
   metaSchema         Json?
   originalPrice      Float             @default(500)
   status             String
+  promoVideo         String?
+  subtitle           String?
+  congratsMessage    String            @default("Congratulations! You've completed the course. We hope you've gained valuable knowledge and skills.")
+  welcomeMessage     String            @default("Welcome to the course! We're excited to have you on board. Get ready to embark on a learning journey that will expand your knowledge and skills. Let's dive in and start learning together!")
+  learningObjectives String[]          @default([])
+  prerequisites      String[]          @default([])
+  targetAudience     String[]          @default([])
+  thumbnailPublicId  String?
+  promoVideoPublicId String?
   category           Category          @relation(fields: [categoryId], references: [id])
   instructor         InstructorProfile @relation(fields: [instructorId], references: [id])
   enrollments        Enrollment[]
@@ -142,9 +142,9 @@ model Course {
 model Section {
   id        String    @id @default(cuid())
   title     String
-  objective String?
   order     Int
   courseId  String
+  objective String?
   lectures  Lecture[]
   course    Course    @relation(fields: [courseId], references: [id], onDelete: Cascade)
 }
@@ -168,10 +168,8 @@ model Video {
   id                   String      @id @default(cuid())
   title                String?
   originalUrl          String
-  originalUrlPubicId   String?
   streamUrl            String?
   thumbnailUrl         String?
-  thumbnailUrlPublicId String?
   duration             Int?
   size                 Float?
   format               String?
@@ -179,6 +177,8 @@ model Video {
   lectureId            String      @unique
   createdAt            DateTime    @default(now())
   updatedAt            DateTime    @updatedAt
+  originalUrlPubicId   String?
+  thumbnailUrlPublicId String?
   lecture              Lecture     @relation(fields: [lectureId], references: [id], onDelete: Cascade)
 }
 

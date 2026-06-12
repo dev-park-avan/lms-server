@@ -37,25 +37,25 @@ export type SectionSumAggregateOutputType = {
 export type SectionMinAggregateOutputType = {
   id: string | null
   title: string | null
-  objective: string | null
   order: number | null
   courseId: string | null
+  objective: string | null
 }
 
 export type SectionMaxAggregateOutputType = {
   id: string | null
   title: string | null
-  objective: string | null
   order: number | null
   courseId: string | null
+  objective: string | null
 }
 
 export type SectionCountAggregateOutputType = {
   id: number
   title: number
-  objective: number
   order: number
   courseId: number
+  objective: number
   _all: number
 }
 
@@ -71,25 +71,25 @@ export type SectionSumAggregateInputType = {
 export type SectionMinAggregateInputType = {
   id?: true
   title?: true
-  objective?: true
   order?: true
   courseId?: true
+  objective?: true
 }
 
 export type SectionMaxAggregateInputType = {
   id?: true
   title?: true
-  objective?: true
   order?: true
   courseId?: true
+  objective?: true
 }
 
 export type SectionCountAggregateInputType = {
   id?: true
   title?: true
-  objective?: true
   order?: true
   courseId?: true
+  objective?: true
   _all?: true
 }
 
@@ -182,9 +182,9 @@ export type SectionGroupByArgs<ExtArgs extends runtime.Types.Extensions.Internal
 export type SectionGroupByOutputType = {
   id: string
   title: string
-  objective: string | null
   order: number
   courseId: string
+  objective: string | null
   _count: SectionCountAggregateOutputType | null
   _avg: SectionAvgAggregateOutputType | null
   _sum: SectionSumAggregateOutputType | null
@@ -213,9 +213,9 @@ export type SectionWhereInput = {
   NOT?: Prisma.SectionWhereInput | Prisma.SectionWhereInput[]
   id?: Prisma.StringFilter<"Section"> | string
   title?: Prisma.StringFilter<"Section"> | string
-  objective?: Prisma.StringNullableFilter<"Section"> | string | null
   order?: Prisma.IntFilter<"Section"> | number
   courseId?: Prisma.StringFilter<"Section"> | string
+  objective?: Prisma.StringNullableFilter<"Section"> | string | null
   lectures?: Prisma.LectureListRelationFilter
   course?: Prisma.XOR<Prisma.CourseScalarRelationFilter, Prisma.CourseWhereInput>
 }
@@ -223,9 +223,9 @@ export type SectionWhereInput = {
 export type SectionOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  objective?: Prisma.SortOrderInput | Prisma.SortOrder
   order?: Prisma.SortOrder
   courseId?: Prisma.SortOrder
+  objective?: Prisma.SortOrderInput | Prisma.SortOrder
   lectures?: Prisma.LectureOrderByRelationAggregateInput
   course?: Prisma.CourseOrderByWithRelationInput
 }
@@ -236,9 +236,9 @@ export type SectionWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.SectionWhereInput[]
   NOT?: Prisma.SectionWhereInput | Prisma.SectionWhereInput[]
   title?: Prisma.StringFilter<"Section"> | string
-  objective?: Prisma.StringNullableFilter<"Section"> | string | null
   order?: Prisma.IntFilter<"Section"> | number
   courseId?: Prisma.StringFilter<"Section"> | string
+  objective?: Prisma.StringNullableFilter<"Section"> | string | null
   lectures?: Prisma.LectureListRelationFilter
   course?: Prisma.XOR<Prisma.CourseScalarRelationFilter, Prisma.CourseWhereInput>
 }, "id">
@@ -246,9 +246,9 @@ export type SectionWhereUniqueInput = Prisma.AtLeast<{
 export type SectionOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  objective?: Prisma.SortOrderInput | Prisma.SortOrder
   order?: Prisma.SortOrder
   courseId?: Prisma.SortOrder
+  objective?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.SectionCountOrderByAggregateInput
   _avg?: Prisma.SectionAvgOrderByAggregateInput
   _max?: Prisma.SectionMaxOrderByAggregateInput
@@ -262,16 +262,16 @@ export type SectionScalarWhereWithAggregatesInput = {
   NOT?: Prisma.SectionScalarWhereWithAggregatesInput | Prisma.SectionScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Section"> | string
   title?: Prisma.StringWithAggregatesFilter<"Section"> | string
-  objective?: Prisma.StringNullableWithAggregatesFilter<"Section"> | string | null
   order?: Prisma.IntWithAggregatesFilter<"Section"> | number
   courseId?: Prisma.StringWithAggregatesFilter<"Section"> | string
+  objective?: Prisma.StringNullableWithAggregatesFilter<"Section"> | string | null
 }
 
 export type SectionCreateInput = {
   id?: string
   title: string
-  objective?: string | null
   order: number
+  objective?: string | null
   lectures?: Prisma.LectureCreateNestedManyWithoutSectionInput
   course: Prisma.CourseCreateNestedOneWithoutSectionsInput
 }
@@ -279,17 +279,17 @@ export type SectionCreateInput = {
 export type SectionUncheckedCreateInput = {
   id?: string
   title: string
-  objective?: string | null
   order: number
   courseId: string
+  objective?: string | null
   lectures?: Prisma.LectureUncheckedCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lectures?: Prisma.LectureUpdateManyWithoutSectionNestedInput
   course?: Prisma.CourseUpdateOneRequiredWithoutSectionsNestedInput
 }
@@ -297,33 +297,33 @@ export type SectionUpdateInput = {
 export type SectionUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   order?: Prisma.IntFieldUpdateOperationsInput | number
   courseId?: Prisma.StringFieldUpdateOperationsInput | string
+  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lectures?: Prisma.LectureUncheckedUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionCreateManyInput = {
   id?: string
   title: string
-  objective?: string | null
   order: number
   courseId: string
+  objective?: string | null
 }
 
 export type SectionUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type SectionUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   order?: Prisma.IntFieldUpdateOperationsInput | number
   courseId?: Prisma.StringFieldUpdateOperationsInput | string
+  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type SectionListRelationFilter = {
@@ -339,9 +339,9 @@ export type SectionOrderByRelationAggregateInput = {
 export type SectionCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  objective?: Prisma.SortOrder
   order?: Prisma.SortOrder
   courseId?: Prisma.SortOrder
+  objective?: Prisma.SortOrder
 }
 
 export type SectionAvgOrderByAggregateInput = {
@@ -351,17 +351,17 @@ export type SectionAvgOrderByAggregateInput = {
 export type SectionMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  objective?: Prisma.SortOrder
   order?: Prisma.SortOrder
   courseId?: Prisma.SortOrder
+  objective?: Prisma.SortOrder
 }
 
 export type SectionMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  objective?: Prisma.SortOrder
   order?: Prisma.SortOrder
   courseId?: Prisma.SortOrder
+  objective?: Prisma.SortOrder
 }
 
 export type SectionSumOrderByAggregateInput = {
@@ -432,16 +432,16 @@ export type SectionUpdateOneRequiredWithoutLecturesNestedInput = {
 export type SectionCreateWithoutCourseInput = {
   id?: string
   title: string
-  objective?: string | null
   order: number
+  objective?: string | null
   lectures?: Prisma.LectureCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUncheckedCreateWithoutCourseInput = {
   id?: string
   title: string
-  objective?: string | null
   order: number
+  objective?: string | null
   lectures?: Prisma.LectureUncheckedCreateNestedManyWithoutSectionInput
 }
 
@@ -477,25 +477,25 @@ export type SectionScalarWhereInput = {
   NOT?: Prisma.SectionScalarWhereInput | Prisma.SectionScalarWhereInput[]
   id?: Prisma.StringFilter<"Section"> | string
   title?: Prisma.StringFilter<"Section"> | string
-  objective?: Prisma.StringNullableFilter<"Section"> | string | null
   order?: Prisma.IntFilter<"Section"> | number
   courseId?: Prisma.StringFilter<"Section"> | string
+  objective?: Prisma.StringNullableFilter<"Section"> | string | null
 }
 
 export type SectionCreateWithoutLecturesInput = {
   id?: string
   title: string
-  objective?: string | null
   order: number
+  objective?: string | null
   course: Prisma.CourseCreateNestedOneWithoutSectionsInput
 }
 
 export type SectionUncheckedCreateWithoutLecturesInput = {
   id?: string
   title: string
-  objective?: string | null
   order: number
   courseId: string
+  objective?: string | null
 }
 
 export type SectionCreateOrConnectWithoutLecturesInput = {
@@ -517,47 +517,47 @@ export type SectionUpdateToOneWithWhereWithoutLecturesInput = {
 export type SectionUpdateWithoutLecturesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   course?: Prisma.CourseUpdateOneRequiredWithoutSectionsNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutLecturesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   order?: Prisma.IntFieldUpdateOperationsInput | number
   courseId?: Prisma.StringFieldUpdateOperationsInput | string
+  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type SectionCreateManyCourseInput = {
   id?: string
   title: string
-  objective?: string | null
   order: number
+  objective?: string | null
 }
 
 export type SectionUpdateWithoutCourseInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lectures?: Prisma.LectureUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutCourseInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lectures?: Prisma.LectureUncheckedUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateManyWithoutCourseInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  objective?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -594,9 +594,9 @@ export type SectionCountOutputTypeCountLecturesArgs<ExtArgs extends runtime.Type
 export type SectionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   title?: boolean
-  objective?: boolean
   order?: boolean
   courseId?: boolean
+  objective?: boolean
   lectures?: boolean | Prisma.Section$lecturesArgs<ExtArgs>
   course?: boolean | Prisma.CourseDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.SectionCountOutputTypeDefaultArgs<ExtArgs>
@@ -605,30 +605,30 @@ export type SectionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
 export type SectionSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   title?: boolean
-  objective?: boolean
   order?: boolean
   courseId?: boolean
+  objective?: boolean
   course?: boolean | Prisma.CourseDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["section"]>
 
 export type SectionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   title?: boolean
-  objective?: boolean
   order?: boolean
   courseId?: boolean
+  objective?: boolean
   course?: boolean | Prisma.CourseDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["section"]>
 
 export type SectionSelectScalar = {
   id?: boolean
   title?: boolean
-  objective?: boolean
   order?: boolean
   courseId?: boolean
+  objective?: boolean
 }
 
-export type SectionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "objective" | "order" | "courseId", ExtArgs["result"]["section"]>
+export type SectionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "order" | "courseId" | "objective", ExtArgs["result"]["section"]>
 export type SectionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   lectures?: boolean | Prisma.Section$lecturesArgs<ExtArgs>
   course?: boolean | Prisma.CourseDefaultArgs<ExtArgs>
@@ -650,9 +650,9 @@ export type $SectionPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     title: string
-    objective: string | null
     order: number
     courseId: string
+    objective: string | null
   }, ExtArgs["result"]["section"]>
   composites: {}
 }
@@ -1080,9 +1080,9 @@ export interface Prisma__SectionClient<T, Null = never, ExtArgs extends runtime.
 export interface SectionFieldRefs {
   readonly id: Prisma.FieldRef<"Section", 'String'>
   readonly title: Prisma.FieldRef<"Section", 'String'>
-  readonly objective: Prisma.FieldRef<"Section", 'String'>
   readonly order: Prisma.FieldRef<"Section", 'Int'>
   readonly courseId: Prisma.FieldRef<"Section", 'String'>
+  readonly objective: Prisma.FieldRef<"Section", 'String'>
 }
     
 
